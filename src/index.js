@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ClassComponent from './ClassComponent.js';
+import ClassPureComponent from './ClassPureComponent.js'
+import FunctionalComponent from './FunctionalComponent.js'
+import FunctionalComponent2 from './FunctionalComponent2.js'
+
+const root = document.getElementById('root');
+const jsxDiv = <div>Hello world with JSX</div>
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  React.createElement('div', {className : 'container'}, '',
+    jsxDiv,
+    <ClassComponent />,
+    <ClassPureComponent/>, 
+    <FunctionalComponent/>, 
+    <FunctionalComponent2/>),
+  root);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
